@@ -15,5 +15,25 @@ Khi thêm một chiến lược mới bạn nên thêm một class. Nó giúp m�
 
 ![](Images/structure-indexed.png)
 
+## Example
 
 ![](Images/paymentmethod.webp)
+
+```C#
+public class PaymentProcessor
+{
+    public void PaymentMethod(decimal amount, string method)
+    {
+        if (method == "CreditCard")
+        {
+            Console.WriteLine($"Processing {amount} via Credit Card");
+        }
+        else if (method == "Paypal")
+        {
+            Console.WriteLine($"Processing {amount} via PayPal");
+        }
+        // As new payment methods are added, more if-else statements are added here
+    }
+}
+```
+
