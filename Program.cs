@@ -1,15 +1,10 @@
-﻿public class PaymentProcessor
-{
-    public void PaymentMethod(decimal amount, string method)
-    {
-        if (method == "CreditCard")
-        {
-            Console.WriteLine($"Processing {amount} via Credit Card");
-        }
-        else if (method == "Paypal")
-        {
-            Console.WriteLine($"Processing {amount} via PayPal");
-        }
-        // As new payment methods are added, more if-else statements are added here
-    }
-}
+﻿using DP_Strategy.Concrete_Strategies;
+using DP_Strategy.Context_Class;
+
+var creditCardPayment = new PaymentProcessor(new CreditCardPaymentStrategy());
+creditCardPayment.ProcessPayment(100.00m);
+// Output: Processing 100.00 via Credit Card
+
+var payPalPayment = new PaymentProcessor(new PayPalPaymentStrategy());
+payPalPayment.ProcessPayment(75.50m);
+// Output: Processing 75.50 via PayPal
